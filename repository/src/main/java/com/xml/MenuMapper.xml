@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mapper.MenuMapper" >
+  <resultMap id="BaseResultMap" type="com.entity.Menu" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="vc_menuname" property="menuname" jdbcType="VARCHAR" />
+    <result column="nb_pid" property="pid" jdbcType="INTEGER" />
+    <result column="vc_url" property="url" jdbcType="VARCHAR" />
+    <result column="vc_icon" property="icon" jdbcType="VARCHAR" />
+  </resultMap>
+</mapper>

@@ -19,7 +19,10 @@
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<!-- 拦截器拦截的URL格式 -->
-			<mvc:mapping path="/sys/**" />
+			<mvc:mapping path="/**" />
+			<mvc:exclude-mapping path="/"></mvc:exclude-mapping>
+			<mvc:exclude-mapping path="/login"></mvc:exclude-mapping>
+			<mvc:exclude-mapping path="/index"></mvc:exclude-mapping>
 			<!-- 处理拦截的具体实现类 -->
 			<bean class="com.interceptor.AuthInterceptor" />
 		</mvc:interceptor>

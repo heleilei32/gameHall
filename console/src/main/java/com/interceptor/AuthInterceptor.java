@@ -1,5 +1,7 @@
 package com.interceptor;
 
+import com.entity.Admin;
+import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -11,8 +13,12 @@ public class AuthInterceptor implements HandlerInterceptor {
 
 
     @Override
-    public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse HttpServletResponse, Object o) throws Exception {
-        System.out.printf("拦截器拦截");
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object o) throws Exception {
+        Admin admin = (Admin)request.getSession().getAttribute(Admin.AdminKey.AdminSesionKey);
+        if (StringUtils.isEmpty(admin)){
+            response.sendRedirect(request.getContextPath()+"/login");
+            return false;
+        }
         return true;
     }
 
