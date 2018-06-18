@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.service.SystemService;
 
+import java.util.List;
+
 @Service
 public class SystemServiceImpl implements SystemService {
 
@@ -17,5 +19,10 @@ public class SystemServiceImpl implements SystemService {
         Admin admin = new Admin();
         admin.setUsername(userName);
         return adminMapper.selectOne(admin);
+    }
+
+    @Override
+    public List<Admin> getAllAdmin() {
+        return adminMapper.selectAll();
     }
 }

@@ -75,7 +75,7 @@
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
                         <img class="nav-user-photo" src="${project}/resources/imgs/user.jpg" alt="Jason's Photo"/>
                         <span class="user-info">
-									<small>Welcome,</small>
+									<small>欢迎,</small>
 									${userName}
 								</span>
 
