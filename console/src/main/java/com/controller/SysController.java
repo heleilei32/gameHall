@@ -1,6 +1,8 @@
 package com.controller;
 
 import com.entity.Admin;
+import com.model.DTParams;
+import com.model.Result;
 import com.service.SystemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -36,8 +38,8 @@ public class SysController {
 
     @RequestMapping("/getAllAdmin")
     @ResponseBody
-    public List<Admin> getAllAdmin() {
-        return systemService.getAllAdmin();
+    public Result getAllAdmin(DTParams dtParams) {
+        return systemService.getAllAdmin(dtParams);
     }
 
 

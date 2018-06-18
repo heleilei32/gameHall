@@ -1,6 +1,8 @@
 package com.service;
 
 import com.entity.Admin;
+import com.model.DTParams;
+import com.model.Result;
 
 import java.util.List;
 
@@ -16,5 +18,5 @@ public interface SystemService {
      * 获取所有的系统用户
      * @return
      */
-    List<Admin> getAllAdmin();
+    Result getAllAdmin(DTParams dtParams);
 }

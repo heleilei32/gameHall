@@ -116,78 +116,21 @@
 </html>
 
 <script>
-    var data = [
-        {
-            "id": 1,
-            "password": "123456",
-            "username": "admin"
-        },
-        {
-            "id": 2,
-            "password": "123",
-            "username": "he0001"
-        },
-        {
-            "id": 3,
-            "username": "he0002"
-        },
-        {
-            "id": 4,
-            "username": "he0003"
-        },
-        {
-            "id": 5,
-            "username": "he0004"
-        },
-        {
-            "id": 1,
-            "password": "123456",
-            "username": "admin"
-        },
-        {
-            "id": 2,
-            "password": "123",
-            "username": "he0001"
-        },
-        {
-            "id": 3,
-            "username": "he0002"
-        },
-        {
-            "id": 4,
-            "username": "he0003"
-        },
-        {
-            "id": 5,
-            "username": "he0004"
-        },
-        {
-            "id": 1,
-            "password": "123456",
-            "username": "admin"
-        },
-        {
-            "id": 2,
-            "password": "123",
-            "username": "he0001"
-        },
-        {
-            "id": 3,
-            "username": "he0002"
-        },
-        {
-            "id": 4,
-            "username": "he0003"
-        },
-        {
-            "id": 5,
-            "username": "he0004"
-        }
-    ];
+
+    var data = [{"id":1,"password":"123456","username":"admin"},{"id":2,"password":"123","username":"he0001"},{"id":3,"username":"he0002"},{"id":4,"username":"he0003"},{"id":5,"username":"he0004"},{"id":6,"username":"he005"},{"id":7,"username":"he006"},{"id":8,"username":"he007"},{"id":9,"username":"he008"},{"id":10,"username":"he009"},{"id":11,"username":"he010"},{"id":12,"username":"he011"},{"id":13,"username":"he012"}];
 
     $(document).ready( function () {
         $('#example').DataTable({
-            data: data,
+            serverSide: true,//服务器方式，必须要设置为true
+            processing: true,//设置为true,就会有表格加载时的提示
+
+            ajax:{
+              url:"${project}/sys/getAllAdmin",
+             /* dataSrc: function ( json ) {
+                    return json;
+                }*/
+            },
+
             /*字段*/
             columns: [
                 {
@@ -212,14 +155,15 @@
                 }
             ],
 
-            "dom": '<l<\'#topPlugin\'>f>rt<ip><"clear">',
-            scrollY: 400,
+            dom: '<l<\'#topPlugin\'>f>rt<ip><"clear">',
+
+            scrollY: 400,//滚轮
             scrollCollapse: true,
-            searching:false,//禁用搜索
 
+
+            searching:false ,//搜索按钮
             language: languageConfig,//国际化
-
-            initComplete:initComplete,
+            initComplete:initComplete,//加载按钮
         });
     } );
 
@@ -246,6 +190,6 @@
 
 
     function toAdd() {
-        alert()
+        alert("123123");
     }
 </script>
